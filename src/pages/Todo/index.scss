@@ -8,14 +8,14 @@
 
   &-title {
     color: white;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: bold;
   }
 
   &-logo {
     height: 18vmin;
     pointer-events: none;
-    margin: 20px auto 10px;
+    margin: 20px auto 5px;
   }
 
   @media (prefers-reduced-motion: no-preference) {
