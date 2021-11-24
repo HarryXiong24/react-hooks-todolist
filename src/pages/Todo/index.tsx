@@ -9,7 +9,7 @@ const Todo: React.FC = (): JSX.Element => {
       <img src={logo} className="todo-logo" alt="logo" />
       <div className="todo-header">
         <p className="todo-header-title">
-          Xbear todo<span>list</span>
+          <span>X</span>bear todo<span>list</span>
         </p>
         <p className="todo-header-intro">
           A Todolist App built with React Hooks & Typescript.

@@ -7,8 +7,8 @@
   background-color: #282c34;
 
   &-logo {
-    height: 18vmin;
-    margin: 20px auto 5px;
+    height: 24vmin;
+    margin: 20px auto 0;
     pointer-events: none;
   }
 
@@ -17,11 +17,15 @@
     margin: 0 auto;
     &-title {
       color: white;
-      font-size: 5rem;
+      font-size: 4.6rem;
       font-weight: 300;
-      margin: 0 auto;
+      margin: -20px auto 0;
       span {
         font-weight: 700;
+      }
+      transition: 0.5s color ease;
+      &:hover {
+        color: #61dafb;
       }
     }
     &-intro {
@@ -29,6 +33,10 @@
       font-size: 1rem;
       font-weight: 400;
       margin: 0 auto;
+      transition: 0.5s color ease;
+      &:hover {
+        color: #61dafb;
+      }
     }
   }
 
@@ -50,7 +58,7 @@
 
   &-footer {
     margin: 10px auto;
-    color: rgba(235, 235, 235, 0.863);
+    color: rgba(235, 235, 235, 0.6);
     font-size: 0.8rem;
     transition: 0.5s color ease;
 

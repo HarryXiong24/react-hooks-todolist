@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoForm from './TodoForm';
-import TodoList from './TodoList';
+import TodoForm from './Form/TodoForm';
+import TodoList from './List/TodoList';
 import TodoProvider from '@/contexts/todo';
 import './index.scss';
 
