@@ -1,5 +1,5 @@
 import { Todo } from '@/contexts/todo';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface ACTION {
   type: string;
@@ -9,7 +9,7 @@ export interface ACTION {
 const todoReducer = (state: Todo[], action: ACTION) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return [...state, { id: uuid(), task: action.task, completed: false }];
+      return [...state, { id: uuidv4(), task: action.task, completed: false }];
     case 'REMOVE_TODO':
       return state.filter((todo) => todo.id !== action.id);
     case 'TOGGLE_TODO':

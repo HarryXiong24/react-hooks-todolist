@@ -1,6 +1,13 @@
 .todo-list {
   width: 63%;
   margin: 20px auto;
-  color: white;
   text-align: center;
+  &-item {
+    &-font {
+      color: white;
+    }
+    &-operator {
+      float: right;
+    }
+  }
 }
