@@ -1,34 +1,30 @@
-import { List } from 'antd';
-import React from 'react';
+import { Todo, TodoContext } from '@/contexts/todo';
+import { Button, List } from 'antd';
+import React, { useContext } from 'react';
 import './TodoList.scss';
 
 const TodoList: React.FC = () => {
-  const data = [
-    {
-      title: 'Ant Design Title 1',
-    },
-    {
-      title: 'Ant Design Title 2',
-    },
-    {
-      title: 'Ant Design Title 3',
-    },
-    {
-      title: 'Ant Design Title 4',
-    },
-  ];
+  const todo: Todo[] = useContext(TodoContext);
+
+  const Title: React.FC<{ title: string }> = ({ title }) => {
+    return <p>{title}</p>;
+  };
+
+  // const Description: React.FC<{ description: string }> = ({ description }) => {
+  //   return <p>{description}</p>;
+  // };
+
   return (
-    <div>
+    <div className="todo-list">
       <List
-        className="todo-list"
         itemLayout="horizontal"
-        dataSource={data}
+        dataSource={todo}
         renderItem={(item) => (
           <List.Item>
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-            />
+            <List.Item.Meta title={<Title title={item.task} />} />
+            <Button size="large" type="primary">
+              Submit
+            </Button>
           </List.Item>
         )}
       />

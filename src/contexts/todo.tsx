@@ -1,6 +1,6 @@
 import todoReducer, { ACTION } from '@/redux/todo';
 import React, { createContext } from 'react';
-import useLocalStorageReducer from '../hooks/useLocalStorageReducer';
+import useLocalStorageReducer from '@/hooks/useLocalStorageReducer';
 
 export interface Todo {
   id: string;
