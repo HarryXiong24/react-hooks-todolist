@@ -8,14 +8,14 @@
 
   &-title {
     color: white;
-    font-size: 40px;
     font-weight: bold;
+    font-size: 40px;
   }
 
   &-logo {
     height: 18vmin;
-    pointer-events: none;
     margin: 20px auto 5px;
+    pointer-events: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -35,14 +35,15 @@
   }
 
   &-footer {
+    position: 'relative';
     display: 'flex';
     justify-content: 'center';
-    backface-visibility: 'hidden';
     color: white;
     font-size: '0.7rem';
-    position: 'relative';
     text-decoration: 'none';
+    backface-visibility: 'hidden';
     transition: '0.5s color ease';
+
     &:hover {
       color: #61dafb;
     }
