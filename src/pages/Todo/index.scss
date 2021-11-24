@@ -6,16 +6,30 @@
   min-height: 100vh;
   background-color: #282c34;
 
-  &-title {
-    color: white;
-    font-weight: bold;
-    font-size: 40px;
-  }
-
   &-logo {
     height: 18vmin;
     margin: 20px auto 5px;
     pointer-events: none;
+  }
+
+  &-header {
+    text-align: center;
+    margin: 0 auto;
+    &-title {
+      color: white;
+      font-size: 5rem;
+      font-weight: 300;
+      margin: 0 auto;
+      span {
+        font-weight: 700;
+      }
+    }
+    &-intro {
+      color: #9aa1a5;
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 auto;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -35,14 +49,10 @@
   }
 
   &-footer {
-    position: 'relative';
-    display: 'flex';
-    justify-content: 'center';
-    color: white;
-    font-size: '0.7rem';
-    text-decoration: 'none';
-    backface-visibility: 'hidden';
-    transition: '0.5s color ease';
+    margin: 10px auto;
+    color: rgba(235, 235, 235, 0.863);
+    font-size: 0.8rem;
+    transition: 0.5s color ease;
 
     &:hover {
       color: #61dafb;

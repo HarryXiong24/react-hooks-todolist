@@ -7,7 +7,14 @@ const Todo: React.FC = (): JSX.Element => {
   return (
     <div className="todo">
       <img src={logo} className="todo-logo" alt="logo" />
-      <p className="todo-title">Xbear Todolist</p>
+      <div className="todo-header">
+        <p className="todo-header-title">
+          Xbear todo<span>list</span>
+        </p>
+        <p className="todo-header-intro">
+          A Todolist App built with React Hooks & Typescript.
+        </p>
+      </div>
       <TodoApp />
       <a
         href="https://github.com/HarryXiong24/react-hooks-todolist"
