@@ -1,6 +1,11 @@
 import { DispatchContext, Todo, TodoContext } from '@/contexts/todo';
 import { Button, List, Tooltip } from 'antd';
-import { DeleteOutlined, EditOutlined, CheckOutlined } from '@ant-design/icons';
+import {
+  DeleteOutlined,
+  EditOutlined,
+  CheckOutlined,
+  RollbackOutlined,
+} from '@ant-design/icons';
 import React, { useContext } from 'react';
 import './TodoList.scss';
 
@@ -15,6 +20,13 @@ const TodoList: React.FC = () => {
     });
   };
 
+  const finish = (id: string) => {
+    dispatch({
+      type: 'TOGGLE_TODO',
+      id,
+    });
+  };
+
   return (
     <div className="todo-list">
       <List
@@ -22,11 +34,38 @@ const TodoList: React.FC = () => {
         dataSource={todo}
         renderItem={(item) => (
           <List.Item>
-            <div className="todo-list-item-font">{item.task}</div>
+            <div
+              className="todo-list-item-font"
+              style={{
+                textDecoration: item.completed ? 'line-through' : '',
+                color: item.completed ? '#ffffff80' : 'white',
+              }}
+            >
+              {item.task}
+            </div>
             <div className="todo-list-item-operator">
-              <Tooltip title="Completed">
-                <Button type="link" icon={<CheckOutlined />} />
-              </Tooltip>
+              {item.completed === false ? (
+                <Tooltip title="Done">
+                  <Button
+                    type="link"
+                    icon={<CheckOutlined />}
+                    onClick={() => {
+                      finish(item.id);
+                    }}
+                  />
+                </Tooltip>
+              ) : (
+                <Tooltip title="Undone">
+                  <Button
+                    type="link"
+                    icon={<RollbackOutlined />}
+                    onClick={() => {
+                      finish(item.id);
+                    }}
+                  />
+                </Tooltip>
+              )}
+
               <Tooltip title="Edit">
                 <Button type="link" icon={<EditOutlined />} />
               </Tooltip>
