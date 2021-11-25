@@ -1,5 +1,5 @@
 import { DispatchContext } from '@/contexts/todo';
-import { Input, Button, Row, Col } from 'antd';
+import { Input, Button, Row, Col, notification } from 'antd';
 import React, { useContext, useState } from 'react';
 
 const TodoForm: React.FC = () => {
@@ -7,12 +7,19 @@ const TodoForm: React.FC = () => {
   const dispatch = useContext(DispatchContext);
 
   const submit = () => {
-    dispatch({
-      type: 'ADD_TODO',
-      task: value,
-      completed: false,
-    });
-    setValue('');
+    if (value === '') {
+      notification.warning({
+        message: 'Tip',
+        description: 'Please input task!',
+      });
+    } else {
+      dispatch({
+        type: 'ADD_TODO',
+        task: value,
+        completed: false,
+      });
+      setValue('');
+    }
   };
 
   return (
