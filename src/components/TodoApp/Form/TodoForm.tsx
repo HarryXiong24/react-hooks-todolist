@@ -5,7 +5,7 @@ const TodoForm: React.FC = () => {
   return (
     <>
       <Row justify="center" gutter={24}>
-        <Col span={18}>
+        <Col span={17}>
           <Input
             size="large"
             allowClear
