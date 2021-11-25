@@ -1,7 +1,20 @@
+import { DispatchContext } from '@/contexts/todo';
 import { Input, Button, Row, Col } from 'antd';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 const TodoForm: React.FC = () => {
+  const [value, setValue] = useState('');
+  const dispatch = useContext(DispatchContext);
+
+  const submit = () => {
+    dispatch({
+      type: 'ADD_TODO',
+      task: value,
+      completed: false,
+    });
+    setValue('');
+  };
+
   return (
     <>
       <Row justify="center" gutter={24}>
@@ -11,8 +24,13 @@ const TodoForm: React.FC = () => {
             allowClear
             style={{ width: 'calc(100% - 200px)' }}
             placeholder="Add you task here"
+            value={value}
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            onPressEnter={submit}
           />
-          <Button size="large" type="primary">
+          <Button size="large" type="primary" onClick={submit}>
             Submit
           </Button>
         </Col>
