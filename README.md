@@ -19,10 +19,10 @@
 yarn
 ```
 
-## Run tests
+## Run
 
 ```sh
-yarn run test
+yarn dev
 ```
 
 ## Author
